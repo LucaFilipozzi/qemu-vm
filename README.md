@@ -22,7 +22,7 @@ Log in with username of `sysadmin` and password of `sysadmin` either at the
 console (curses display) or via ssh:
 
 ```
-ssh -p 2200 sysadmin@localhost
+ssh -p 10022 sysadmin@localhost
 ```
 
 ## observations
