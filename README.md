@@ -31,5 +31,11 @@ ssh -p 2200 sysadmin@localhost
 the framebuffer for this emulated video card, `bochs_drm.fbdev=off` is passed
 to the Linux kernel per [this advice][1].
 
+## license
+
+This project is copyright (C) 2017 Luca Filipozzi <luca.filipozzi@gmail.com>
+and is released subject to the terms of the Mozilla Public License v2. Please
+see the included LICENSE.txt for the full text of Mozilla Public License v2.
+
 [1]: https://unix.stackexchange.com/a/347751/105853
 

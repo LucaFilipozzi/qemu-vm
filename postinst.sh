@@ -1,4 +1,5 @@
-# vim: set ft=sh:
+# Copyright (C) 2017 Luca Filipozzi <luca.filipozzi@gmail.com>
+# Released subject to the terms of the Mozilla Public License.
 
 # reduce boot delay
 busybox sed -i -e 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0/' /etc/default/grub
@@ -11,3 +12,4 @@ busybox sed -i -e 's/#GRUB_TERMINAL=console/GRUB_TERMINAL=console/' /etc/default
 
 update-grub
 
+# vim: set ft=sh:

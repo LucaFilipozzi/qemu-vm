@@ -1,4 +1,7 @@
 #!/bin/sh
+# Copyright (C) 2017 Luca Filipozzi <luca.filipozzi@gmail.com>
+# Released subject to the terms of the Mozilla Public License.
+
 qemu-system-x86_64 -enable-kvm -m size=1G -smp cpus=2 -display curses \
   -drive if=virtio,file=disk.qcow2,format=qcow2,index=0,media=disk \
   -net nic,name=eth0,model=virtio \

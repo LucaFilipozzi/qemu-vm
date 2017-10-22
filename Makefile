@@ -1,3 +1,6 @@
+# Copyright (C) 2017 Luca Filipozzi <luca.filipozzi@gmail.com>
+# Released subject to the terms of the Mozilla Public License.
+
 bootargs  = auto
 bootargs += console-keymaps-at/keymap=us
 bootargs += console-setup/ask_detect=false
