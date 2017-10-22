@@ -26,10 +26,6 @@ clean:
 distclean: clean
 	rm -f debian-9.2.1-amd64-netinst.iso
 
-.PRECIOUS: debian-9.2.1-amd64-netinst.iso
-debian-9.2.1-amd64-netinst.iso:
-	wget -c -N https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.2.1-amd64-netinst.iso
-
 disk.qcow2: disk.img kernel initrd netinst.iso
 	qemu-system-x86_64 -enable-kvm -m size=1G -smp cpus=2 -display curses \
 	  -drive if=virtio,file=disk.img,format=raw,index=1,cache=unsafe \
@@ -54,4 +50,8 @@ initrd: netinst.iso
 .INTERMEDIATE: netinst.iso
 netinst.iso: debian-9.2.1-amd64-netinst.iso
 	ln -sf $^ $@
+
+.PRECIOUS: debian-9.2.1-amd64-netinst.iso
+debian-9.2.1-amd64-netinst.iso:
+	wget -c -N https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.2.1-amd64-netinst.iso
 
