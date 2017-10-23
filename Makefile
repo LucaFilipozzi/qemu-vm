@@ -31,10 +31,10 @@ distclean: clean
 
 disk.qcow2: disk.img kernel initrd netinst.iso
 	qemu-system-x86_64 -enable-kvm -m size=1G -smp cpus=2 -display curses \
-	  -drive if=virtio,file=disk.img,format=raw,index=1,cache=unsafe \
+	  -drive if=virtio,file=disk.img,format=raw,index=0,cache=unsafe \
 	  -cdrom netinst.iso -boot d -no-reboot \
 	  -net nic,name=eth0,model=virtio \
-	  -net user,name=eth0,guestfwd=:10.0.2.10:8080-cmd:"busybox httpd -i" \
+	  -net user,name=eth0,guestfwd=tcp:10.0.2.10:8080-cmd:"busybox httpd -i" \
 	  -kernel kernel -initrd initrd -append "${bootargs}"
 	qemu-img convert -f raw -O qcow2 disk.img disk.qcow2
 
